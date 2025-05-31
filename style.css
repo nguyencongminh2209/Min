@@ -1,43 +1,102 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #ffe0ec, #ffe9f7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #ffe0ec, #ffe9f7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  background: url('asset/blackpinkkkkkkkkkkk.jpg') no-repeat center center/cover;
+  opacity: 0.1;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  color: #e91e63;
+  margin-bottom: 0;
+  text-shadow: 0 0 10px #e91e63;
+}
+.typing {
+  color: #333;
+  font-size: 18px;
+  margin-top: 10px;
+  height: 50px;
+  overflow: hidden;
+}
+
+button {
+  background-color: #ff69b4;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+button:hover {
+  background-color: #e91e63;
+}
+
+.heart {
+  position: absolute;
+  color: #ff69b4;
+  animation: float 4s linear infinite;
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  .container {
-    background-color: white;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
   }
-  
-  h1 {
-    color: #e91e63;
-  }
-  
-  p {
-    font-size: 18px;
-    color: #333;
-  }
-  
-  button {
-    background-color: #ff69b4;
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #e91e63;
-  }
+}
+
+audio {
+  display: none;
+}
+
+#musicBtn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #fff;
+  border: 2px solid #e91e63;
+  color: #e91e63;
+  padding: 8px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 10;
+}
